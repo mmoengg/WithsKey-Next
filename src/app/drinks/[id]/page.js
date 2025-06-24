@@ -1,79 +1,49 @@
 
-// import { useEffect, useState } from "react";
-import { Navigation, Pagination } from 'swiper/modules';
-// import { supabase } from '@/utils/supabaseClient';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import Link from "next/link";
-
-
-
 
 export default function  DrinksDetailPages() {
-    // const [tags, setTags] = useState([]);
-    // const [error, setError] = useState(null);
-    //
-    // useEffect(() => {
-    //     // 컴포넌트가 처음 마운트될 때 한 번만 실행
-    //     const fetchTags = async () => {
-    //         const { data, error } = await supabase.from('tags').select('*');
-    //         if (error) setError(error.message);
-    //         else setTags(data);
-    //     };
-    //     fetchTags();
-    // }, []);
-    //
-    //
-    // useEffect(() => {
-    //     console.log('tags', tags);
-    // }, [tags]);
-    //
-    // if (error) return <div>에러: {error}</div>;
 
     return (
-      <section className="w-full h-full min-h-screen flex flex-col items-center justify-start bg-gray-200">
-        <div className="w-full max-w-[1280px] h-full mt-[60px] py-[40px] px-4 flex flex-col items-center justify-start">
-            <div className="w-full h-[130px] mb-8">
-                    <Swiper
-                        modules={[Navigation]}
-                        spaceBetween={30}
-                        slidesPerView={8}
-                        slidesPerGroup={2}
-                        speed={800}
-                        navigation
-                        pagination={{ clickable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
-                        className="w-full h-full"
-                    >
-                        {tags.map((tag, idx) => (
-                            <SwiperSlide key={idx}
-                                         className="p-3 border-[1px] rounded-full text-center !flex items-center justify-center cursor-pointer hover:bg-yellow-300 transition">
-                                <Link key={idx} href={`/drinks/${tag.id}`}>
-                                    {tag.name}
-                                </Link>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                    <input />
+        <section className="w-full h-full min-h-screen flex flex-col items-center justify-start bg-gray-200">
+            <div className="w-full max-w-[1280px] h-full mt-[60px] py-[40px] px-4 flex flex-col items-center justify-start">
+                <div className="w-full h-[700px] flex gap-24">
+                    <div className="w-1/2 p-12 bg-white rounded-2xl">사진</div>
+                    <div className="w-1/2 flex flex-col justify-between gap-12">
+                        {/* name */}
+                        <div className="pt-[170px]">
+                            <h1 className="text-7xl text-center">Gelenfarclas</h1>
+                        </div>
+                        {/* info */}
+                        <div className="flex flex-col gap-4">
+                            <div className="w-full flex justify-end gap-12">
+                                <div>like</div>
+                                {/*<div>comment</div>*/}
+                            </div>
+                            <ul className="w-full flex flex-col border-2">
+                                <li className="w-full h-[60px] px-5 flex  items-center justify-between gap-4">
+                                    <p className="font-bold">Entry</p>
+                                    <ul className="flex gap-2">
+                                        <li className="px-4 py-2 bg-white rounded-full">싱글몰트</li>
+                                        <li className="px-4 py-2 bg-white rounded-full">과일</li>
+                                        <li className="px-4 py-2 bg-white rounded-full">데이트</li>
+                                    </ul>
+                                </li>
+                                <li className="w-full h-[60px] px-5 flex items-center justify-between gap-6 border-t-[2px]">
+                                    <p className="font-bold">도수</p>
+                                    <p className="">40%</p>
+                                </li>
+                                <li className="w-full h-[60px] px-5 flex items-center justify-between gap-6 border-t-[2px]">
+                                    <p className="font-bold">용량</p>
+                                    <p className="">375ml</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {/*<div className="w-full h-1/2">차트</div>*/}
+                {/*<div className="w-full">스낵</div>*/}
+                {/*<div className="w-full">연관 술</div>*/}
+                {/*<div className="w-full">코멘트</div>*/}
             </div>
-            <div>
-                <button className="min-w-10">검색</button>
-            </div>
-            <ul className="w-full flex flex-wrap justify-center gap-8">
-                {DRINKS_LIST.map((drink) => (
-                    <DrinkCard
-                        key={drink.id}
-                        image={drink.image}
-                        name={drink.name}
-                        tags={drink.tags}
-                        level={drink.level}
-                    />
-                ))}
-            </ul>
-        </div>
-      </section>
+        </section>
   )
 }

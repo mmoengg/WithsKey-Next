@@ -81,6 +81,7 @@ export default function  Drinks() {
                 {DRINKS_LIST.map((drink) => (
                     <DrinkCard
                         key={drink.id}
+                        id={drink.id}
                         image={drink.image}
                         name={drink.name}
                         tags={drink.tags}
