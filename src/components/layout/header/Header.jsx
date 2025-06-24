@@ -1,23 +1,31 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
     const [isBlur, setIsBlur] = useState(false);
+    const pathname = usePathname();
+
+    let headerClass = "fixed z-[100] top-0 left-0 w-full h-[60px] flex items-center justify-center backdrop-blur-md transition-colors duration-300 text-white";
+
+    if (pathname === '/') {
+        headerClass += isBlur ? ' bg-[#1E0201] ' : ' bg-transparent';
+    } else {
+        headerClass += ' bg-[#1E0201] ';
+    }
 
     useEffect(() => {
         const handleScroll = () => {
-            // 스크롤이 한 화면(h-screen) 이상 내려오면 true
             setIsBlur(window.scrollY >= window.innerHeight);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
-        <header className={`fixed z-[100] top-0 left-0 w-full h-[60px] flex items-center justify-center backdrop-blur-md ${isBlur ? ' bg-[#1E0201]' : ''}`}>
-            <div className='w-full max-w-[1280px] h-full flex items-center justify-center px-4 text-white relative'>
+        <header className={headerClass}>
+            <div className='w-full max-w-[1280px] h-full flex items-center justify-center px-4 relative'>
                 <h1 className='absolute left-4 h-full flex items-center text-xl font-bold cursor-pointer'>
                     <a href='/'>
                         <img src='/assets/icons/logo-withskey-w.png' alt='Logo' className='h-15 w-15 inline-block' />

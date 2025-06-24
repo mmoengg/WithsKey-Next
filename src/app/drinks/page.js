@@ -75,7 +75,7 @@ export default function  Drinks() {
             </div>
             <div className="w-full h-full flex justify-between items-center gap-6 mb-8">
                 <input placeholder="검색어를 입력해 주세요" />
-                <button type="button" className="min-w-10 h-full rounded-md text-white bg-[#1E0201] px-[24px] py-[18px] text-nowrap cursor-pointer">검색</button>
+                <button type="button" className="min-w-10 h-full rounded-md text-white bg-[#1E0201] px-[32px] py-[18px] text-nowrap cursor-pointer">검색</button>
             </div>
             <ul className="w-full flex flex-wrap justify-center gap-8">
                 {DRINKS_LIST.map((drink) => (
