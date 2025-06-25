@@ -66,6 +66,9 @@
 }
 
 @layer base {
+    *::-webkit-scrollbar {
+        display: none;
+    }
     body {
         margin: 0;
         padding: 0;
@@ -93,7 +96,6 @@
     nav {
         font-family: 'eulyoo1945', serif;
     }
-
 
     input {
         padding: 18px 24px;
@@ -133,6 +135,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .fcs {
+        display: flex;
+        align-items: center;
+        justify-content: start;
     }
     .fcb {
         display: flex;

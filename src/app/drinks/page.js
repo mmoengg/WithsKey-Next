@@ -35,52 +35,62 @@ export default function  Drinks() {
     // if (error) return <div>에러: {error}</div>;
 
     return (
-      <section className="w-full h-full min-h-screen flex flex-col items-center justify-start bg-gray-200">
-        <div className="w-full max-w-[1280px] h-full mt-[60px] py-[40px] px-4 flex flex-col items-center justify-start">
-            <div className="relative w-[calc(100%-130px)] h-[110px] mb-8">
-               <button type="button" className="custom-prev absolute top-1/2 -left-16 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow flex items-center justify-center z-10 hover:bg-yellow-300 transition cursor-pointer">
-                <span className="material-icons">{'<'}</span>
-                </button>
-                <Swiper
-                    modules={[Navigation]}
-                    spaceBetween={30}
-                    slidesPerView={8}
-                    slidesPerGroup={2}
-                    speed={800}
-                    style={{
-                        "--swiper-navigation-color": "#1E0201",
-                    }}
-                    // navigation
-                    navigation={{
-                        nextEl: '.custom-next',
-                        prevEl: '.custom-prev'
-                    }}
-                    pagination={{ clickable: true }}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
-                    className="w-full h-full"
-                >
-                    {tags.map((tag, idx) => (
-                        <SwiperSlide key={idx}
-                                     className="cursor-pointern">
-                            <Link key={idx} href={`/tags/${tag.id}`} className="w-full h-full p-3 border-[1px] rounded-full  flex items-center justify-center hover:bg-yellow-300 transition">
-                                {tag.name}
-                            </Link>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-                <button type="button" className="custom-next absolute top-1/2 -right-16 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow flex items-center justify-center z-10 hover:bg-yellow-300 transition cursor-pointer">
-                    <span className="material-icons">{'>'}</span>
-                </button>
+        <section className="w-full h-full min-h-screen flex flex-col">
+            {/* 태그 리스트 */}
+            <div className="w-full h-[55px] border-b-base flex items-center justify-start pl-[67px]">
+                <div className="relative w-[calc(100%-(67px*2))] h-full">
+                    <button type="button" className="custom-prev absolute top-1/2 -left-[66px] -translate-y-1/2 w-[67px] h-full border-r-base z-10 hover:bg-primary transition duration-200 cursor-pointer">
+                        <span className="material-icons">{'<'}</span>
+                    </button>
+                    <Swiper
+                        modules={[Navigation]}
+                        spaceBetween={0}
+                        slidesPerView={12}
+                        slidesPerGroup={2}
+                        speed={800}
+                        style={{
+                            "--swiper-navigation-color": "#1E0201",
+                        }}
+                        navigation={{
+                            nextEl: '.custom-next',
+                            prevEl: '.custom-prev'
+                        }}
+                        pagination={{ clickable: true }}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                        className="w-full h-full"
+                    >
+                        {tags.map((tag, idx) => (
+                            <SwiperSlide key={idx} className="cursor-pointer">
+                                <Link key={idx} href={`/tags/${tag.id}`} className="w-full h-full p-3 border-l-base text-sm text-surface font-eulyoo fcc text-center hover:bg-primary transition duration-200">
+                                    #{tag.name}
+                                </Link>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <button type="button" className="custom-next border-l-base absolute top-1/2 -right-[67px] -translate-y-1/2 w-[67px] h-full z-10 hover:bg-primary transition duration-200 cursor-pointer">
+                        <span className="material-icons">{'>'}</span>
+                    </button>
+                    <button type="button" className="border-l-base absolute top-1/2 -right-[134px] -translate-y-1/2 w-[67px] h-full z-10 hover:bg-primary transition duration-200 cursor-pointer">
+                        <span className="material-icons">{'O'}</span>
+                    </button>
+                </div>
+                {/*<div className="w-full h-full flex justify-between items-center gap-6 mb-8">*/}
+                {/*    <input placeholder="검색어를 입력해 주세요" />*/}
+                {/*    <button type="button" className="min-w-10 h-full rounded-md text-white bg-[#1E0201] px-[32px] py-[18px] text-nowrap cursor-pointer">검색</button>*/}
+                {/*</div>*/}
             </div>
-            <div className="w-full h-full flex justify-between items-center gap-6 mb-8">
-                <input placeholder="검색어를 입력해 주세요" />
-                <button type="button" className="min-w-10 h-full rounded-md text-white bg-[#1E0201] px-[32px] py-[18px] text-nowrap cursor-pointer">검색</button>
-            </div>
-            <ul className="w-full flex flex-wrap justify-center gap-8">
-                {DRINKS_LIST.map((drink) => (
+
+            <h3 className="pl-3 pt-[150px] text-surface font-eulyoo text-4xl text-left mb-10 font-light tracking-tighter leading-12">
+                다양한 위스키를<br/>
+                만나 보세요
+            </h3>
+            <ul className="w-full flex flex-wrap">
+                {DRINKS_LIST.map((drink, idx) => (
                     <DrinkCard
                         key={drink.id}
+                        idx={idx}
+                        total={DRINKS_LIST.length}
                         id={drink.id}
                         image={drink.image}
                         name={drink.name}
@@ -89,7 +99,6 @@ export default function  Drinks() {
                     />
                 ))}
             </ul>
-        </div>
-      </section>
+        </section>
   )
 }
