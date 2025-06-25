@@ -37,8 +37,9 @@ export default function ArticleCategoryList() {
                 {currentList.map((item, idx) => (
                     <ArticleCategoryCard
                         key={item.id}
-                        activeCategory={activeCategory}
                         idx={idx}
+                        subtitle={item.subtitle}
+                        activeCategory={activeCategory}
                         total={currentList.length}
                         {...item}
                     />

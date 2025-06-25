@@ -125,6 +125,9 @@
     .border-l-base {
         border-left: 1px solid var(--color-border-base);
     }
+    .border-r-base {
+        border-right: 1px solid var(--color-border-base);
+    }
 
     .fcc {
         display: flex;
