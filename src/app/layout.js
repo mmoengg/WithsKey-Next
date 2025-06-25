@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 
     return (
         <html lang='ko'>
-            <body className={`relative ${geistSans.variable} ${geistMono.variable} antialiased`}>
+            <body className={`relative ${geistSans.variable} ${geistMono.variable} antialiased bg-[var(--background)]`}>
                 <Header />
                     {children}
                 <Footer />

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ArticleCategoryCard({ image, alt, title, description, href }) {
     return (
-        <li className="w-1/2 bg-white rounded-2xl shadow-lg px-12 py-20 flex flex-col items-center hover:scale-105 transition">
+        <li className="min-w-1/3  p-4 flex flex-col border border-[var(--border-base)] border-t-transparent border-l-transparent">
             <Link href={href} className="w-full flex flex-col items-center gap-4">
                 <img src={image} alt={alt} className="w-20 h-20 mb-4 rounded-full object-cover" />
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
