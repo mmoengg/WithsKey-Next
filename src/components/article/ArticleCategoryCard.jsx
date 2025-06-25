@@ -1,18 +1,28 @@
 import Link from "next/link";
 
-export default function ArticleCategoryCard({ image, alt, title, description, href }) {
+export default function ArticleCategoryCard({ activeCategory, idx, id, label, image_url, total, itemsPerRow= 3 }) {
+    // 마지막 줄의 시작 인덱스 계산
+    const lastRowStart =
+        total - (total % itemsPerRow === 0 ? itemsPerRow : total % itemsPerRow);
+    const isLastRow = idx >= lastRowStart;
+
     return (
-        <li className="min-w-1/3  p-4 flex flex-col border border-[var(--border-base)] border-t-transparent border-l-transparent">
-            <Link href={href} className="w-full flex flex-col items-center gap-4">
-                <img src={image} alt={alt} className="w-20 h-20 mb-4 rounded-full object-cover" />
-                <h3 className="text-xl font-semibold mb-2">{title}</h3>
-                <p className="h-10 text-gray-700 text-center mb-4 text-sm">
-                    {description}
-                </p>
-                <div className="mt-auto px-4 py-2 rounded bg-yellow-900 text-white hover:bg-yellow-700 transition">
-                    자세히 보기
+        <li className={`min-w-1/3 min-h-[calc(50dvh-55px)] p-4 flex flex-col border-l-base
+            ${!isLastRow ? "border-b-base" : ""}`}>
+            <div className="w-full h-full flex justify-between flex-col gap-12">
+                <img
+                    src={`/${activeCategory}/${id}`}
+                    alt={label}
+                    className="w-full h-[45%] object-cover bg-primary"
+                />
+                <div className="flex flex-1 flex-col gap-5">
+                    <h3 className="text-3xl font-eulyoo">{label}</h3>
+                    <p className="text-sm">dd</p>
                 </div>
-            </Link>
+                <Link href={`/article/${activeCategory}/${id}`}
+                    className="w-full h-[44px] mb-10 border border-surface rounded bg-primary text-[14px] hover:bg-background transition fcc cursor-pointer"
+                >자세히 보기</Link>
+            </div>
         </li>
     );
 }

@@ -2,6 +2,7 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 1,
         label: '위스키를 아시나요?',
+        image_url: '',
         sections: [
             {
                 title: '양주 좋아하세요?',
@@ -97,6 +98,7 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 2,
         label: '위스키의 탄생',
+        image_url: '',
         sections: [
             {
                 title: '아! 위스키! 생명의 물!',
@@ -159,6 +161,7 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 3,
         label: '위스키 제조 과정 -상-',
+        image_url: '',
         sections: [
             {
                 title: '위스키를 만드는 큰 그림부터',
@@ -292,6 +295,7 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 4,
         label: '위스키 제조 과정 -하-',
+        image_url: '',
         sections: [
             {
                 title: '위스키 만드는 과정 2',
@@ -418,6 +422,7 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 5,
         label: '위스키 시음 -상-',
+        image_url: '',
         sections: [
             {
                 title: '위스키를 만나는 태도',
@@ -473,6 +478,7 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 6,
         label: '위스키 시음 -하-',
+        image_url: '',
         sections: [
             {
                 title: '본격적으로 맛보기',
@@ -559,6 +565,7 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 7,
         label: '위스키 종류 알아보기',
+        image_url: '',
         sections: [
             {
                 title: '위스키 구분의 기준',
@@ -667,6 +674,7 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 8,
         label: '이야깃거리',
+        image_url: '',
         sections: [
             {
                 title: '이야깃거리',
@@ -728,6 +736,7 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 9,
         label: '위스키 용어 사전',
+        image_url: '',
         sections: [
             {
                 title: '위스키 용어 사전',
