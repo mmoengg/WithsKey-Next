@@ -2,6 +2,8 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 1,
         label: '위스키를 아시나요?',
+        subtitle: '위스키를 알기 위한 여정에 오신 것을 환영합니다.',
+        image_url: '',
         sections: [
             {
                 title: '양주 좋아하세요?',
@@ -97,6 +99,8 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 2,
         label: '위스키의 탄생',
+        subtitle: '위스키의 시작은 스코틀랜드에서부터',
+        image_url: '',
         sections: [
             {
                 title: '아! 위스키! 생명의 물!',
@@ -159,6 +163,8 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 3,
         label: '위스키 제조 과정 -상-',
+        subtitle: '위스키를 만드는 큰 그림부터',
+        image_url: '',
         sections: [
             {
                 title: '위스키를 만드는 큰 그림부터',
@@ -292,6 +298,8 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 4,
         label: '위스키 제조 과정 -하-',
+        subtitle: '위스키를 만드는 큰 그림부터',
+        image_url: '',
         sections: [
             {
                 title: '위스키 만드는 과정 2',
@@ -418,6 +426,8 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 5,
         label: '위스키 시음 -상-',
+        subtitle: '위스키를 즐기는 방법',
+        image_url: '',
         sections: [
             {
                 title: '위스키를 만나는 태도',
@@ -473,6 +483,8 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 6,
         label: '위스키 시음 -하-',
+        subtitle: '위스키를 즐기는 방법',
+        image_url: '',
         sections: [
             {
                 title: '본격적으로 맛보기',
@@ -559,6 +571,8 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 7,
         label: '위스키 종류 알아보기',
+        subtitle: '위스키는 정말 종류가 많아요!',
+        image_url: '',
         sections: [
             {
                 title: '위스키 구분의 기준',
@@ -667,6 +681,8 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 8,
         label: '이야깃거리',
+        subtitle: '위스키에 얽힌 재미있는 이야기들',
+        image_url: '',
         sections: [
             {
                 title: '이야깃거리',
@@ -728,6 +744,8 @@ const TUTORIAL_ARTICLE_LIST = [
     {
         id: 9,
         label: '위스키 용어 사전',
+        subtitle: '위스키를 즐기기 위한 필수 지식',
+        image_url: '',
         sections: [
             {
                 title: '위스키 용어 사전',
