@@ -28,6 +28,38 @@
         font-weight: bold;
         font-style: normal;
     }
+
+    @font-face {
+        font-family: 'SpoqHanSansNeo';
+        src: url('/assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Thin.woff2') format('woff2');
+        font-weight: 200;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'SpoqHanSansNeo';
+        src: url('/assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Light.woff2') format('woff2');
+        font-weight: 100;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'SpoqHanSansNeo';
+        src: url('/assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'SpoqHanSansNeo';
+        src: url('/assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'SpoqHanSansNeo';
+        src: url('/assets/fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2') format('woff2');
+        font-weight: 900;
+        font-style: normal;
+    }
+
     nav a {
         font-family: 'eulyoo1945', sans-serif;
     }
