@@ -1,23 +1,41 @@
+"use client"
+
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
-export default function BoardCard({ idx, total, id, name, image, title, content, like, comment, createdAt}) {
-    // 4의 배수(4, 8, 12, ...)는 오른쪽 border를 빼기 위함
-    const itemsPerRow = 4; // 한 줄에 몇 개의 아이템이 있는지
-    const isMultipleOfFive = (idx + 1) % itemsPerRow === 0;
+// 화면 너비에 따라 한 줄에 표시할 아이템 수를 결정하는 함수
+function getItemsPerRow(width) {
+    if (width < 768) return 1;
+    if (width < 1024) return 3;
+    return 4;
+}
 
-    const lastRowCount = total % itemsPerRow === 0 ? itemsPerRow : total % itemsPerRow;
-    const lastRowStart = total - lastRowCount;
+export default function BoardCard({ idx, total, id, name, image, title, content, like, comment, created_at }) {
+    const [itemsPerRow, setItemsPerRow] = useState(getItemsPerRow(window.innerWidth));
+
+    useEffect(() => {
+        function handleResize() {
+            setItemsPerRow(getItemsPerRow(window.innerWidth));
+        }
+        window.addEventListener("resize", handleResize);
+        // 컴포넌트 언마운트 시 이벤트 제거
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // 마지막 줄의 시작 인덱스 계산
+    const lastRowStart = total - (total % itemsPerRow === 0 ? itemsPerRow : total % itemsPerRow);
+    const isLastRow = idx >= lastRowStart;
 
     return (
-        <li className="w-1/4 min-h-[calc((100dvh-55px)/4)] text-surface">
+        <li className={`w-full md:w-1/3 lg:w-1/4 min-h-[calc((100dvh-55px)/4)] text-surface border-b-base border-r-base nth-child-4:border-0 
+                 ${isLastRow ? "last-row" : ""} `}>
             <Link
                 href={`/board/${id}`}
-                className={`h-full p-8 flex flex-col cursor-pointer 
-                    ${idx < lastRowStart ? "border-b-base" : ''}
-                    ${isMultipleOfFive ? "" : 'border-r-base'} 
-                `}
+                className={`h-full p-8 flex flex-col cursor-pointer`}
             >
+                    {/*${idx < lastRowStart ? "border-b-base" : ''}*/}
+                    {/*${isMultipleOfFive ? "" : 'border-r-base'} */}
                 <h3 className="text-2xl font-light font-eulyoo">방문했어요</h3>
                 <p className="flex-1">
                     엔트리급 위스키 소개가 좋은 것 같아요
@@ -26,27 +44,6 @@ export default function BoardCard({ idx, total, id, name, image, title, content,
                     <span>by {name}</span>
                     <span>{comment}</span>
                 </div>
-                {/*<div className="w-full pb-3 flex gap-4">*/}
-                {/*    <div className="w-12 h-12 rounded-full bg-black">*/}
-                {/*        <Image src={image} width={48} height={48} className="rounded-full object-cover" />*/}
-                {/*    </div>*/}
-                {/*    <div>*/}
-                {/*        <p>{name}</p>*/}
-                {/*        <p>{createdAt}</p>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-                {/*<div className="flex flex-col gap-3 flex-1">*/}
-                {/*    <h1>{title}</h1>*/}
-                {/*    <p>{content}</p>*/}
-                {/*</div>*/}
-                {/*<div className="flex gap-6">*/}
-                {/*    <button type="button">*/}
-                {/*        <span>{like}</span>*/}
-                {/*    </button>*/}
-                {/*    <button type="button">*/}
-                {/*        <span>{comment}</span>*/}
-                {/*    </button>*/}
-                {/*</div>*/}
             </Link>
         </li>
     )

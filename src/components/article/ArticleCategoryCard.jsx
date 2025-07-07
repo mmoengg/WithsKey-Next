@@ -1,18 +1,31 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function ArticleCategoryCard({ activeCategory, idx, id, label, subtitle, image_url, total, itemsPerRow= 3 }) {
+// 화면 너비에 따라 한 줄에 표시할 아이템 수를 결정하는 함수
+function getItemsPerRow(width) {
+    if (width < 768) return 1;
+    if (width < 1024) return 2;
+    return 3;
+}
+
+export default function ArticleCategoryCard({ activeCategory, idx, id, label, subtitle, image_url, total}) {
+    const [itemsPerRow, setItemsPerRow] = useState(getItemsPerRow(window.innerWidth));
+
+    useEffect(() => {
+        function handleResize() {
+            setItemsPerRow(getItemsPerRow(window.innerWidth));
+        }
+        window.addEventListener("resize", handleResize);
+        // 컴포넌트 언마운트 시 이벤트 제거
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     // 마지막 줄의 시작 인덱스 계산
-    const lastRowStart =
-        total - (total % itemsPerRow === 0 ? itemsPerRow : total % itemsPerRow);
+    const lastRowStart = total - (total % itemsPerRow === 0 ? itemsPerRow : total % itemsPerRow);
     const isLastRow = idx >= lastRowStart;
 
-    // 3의 배수인지 아닌지
-    // 3, 6, 9, ... 등은 마지막 줄에서 오른쪽에 여백이 생기지 않도록 하기 위함
-    const isMultipleOfThree = (idx + 1) % itemsPerRow === 0;
-
     return (
-        <li className={`min-w-1/3 min-h-[calc(50dvh-55px)] p-4 flex flex-col ${isMultipleOfThree ? "" : 'border-r-base'} 
-            ${!isLastRow ? "border-b-base" : ""}`}>
+        <li className={`min-w-full md:min-w-1/2 lg:min-w-1/3 min-h-[calc(50dvh-55px)] p-4 flex flex-col border-b-base border-r-base nth-child-3:border-0 ${isLastRow ? "last-row" : ""}`}>
             <div className="w-full h-full flex justify-between flex-col gap-12">
                 <img
                     src={`/${activeCategory}/${id}`}
