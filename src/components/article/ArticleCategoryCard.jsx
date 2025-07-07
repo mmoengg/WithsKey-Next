@@ -14,7 +14,8 @@ export default function ArticleCategoryCard({ activeCategory, idx, id, label, su
     const [itemsPerRow, setItemsPerRow] = useState(0);
 
     useEffect(() => {
-        function handleResize() {
+        setItemsPerRow(getItemsPerRow(window.innerWidth));
+        function handwindowleResize() {
             setItemsPerRow(getItemsPerRow(window.innerWidth));
         }
         handleResize();

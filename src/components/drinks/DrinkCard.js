@@ -10,9 +10,10 @@ function getItemsPerRow(width) {
 }
 
 export default function DrinkCard({ idx, total, id, image, name, tags, level  }) {
-    const [itemsPerRow, setItemsPerRow] = useState(getItemsPerRow(window.innerWidth));
+    const [itemsPerRow, setItemsPerRow] = useState(0);
 
     useEffect(() => {
+        setItemsPerRow(getItemsPerRow(window.innerWidth));
         function handleResize() {
             setItemsPerRow(getItemsPerRow(window.innerWidth));
         }

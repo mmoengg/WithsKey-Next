@@ -22,19 +22,18 @@ function getItemsPerRow(width) {
 }
 
 export default function  Drinks() {
-    const [itemsPerRow, setItemsPerRow] = useState(() =>
-        typeof window !== "undefined" ? getItemsPerRow(window.innerWidth) : 3
-    );
-
+    const [itemsPerRow, setItemsPerRow] = useState(0);
 
     useEffect(() => {
+        setItemsPerRow(getItemsPerRow(window.innerWidth));
         function handleResize() {
             setItemsPerRow(getItemsPerRow(window.innerWidth));
         }
-        handleResize();
+
         window.addEventListener("resize", handleResize);
         // 컴포넌트 언마운트 시 이벤트 제거
         return () => window.removeEventListener("resize", handleResize);
+
     }, []);
 
     // 태그 출력 개수
