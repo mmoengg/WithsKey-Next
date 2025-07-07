@@ -83,7 +83,7 @@ const BOARD_LIST = [
         commentCount: 3,
         created_at: '2024-06-24T22:00:00',
     },{
-        id: 1,
+        id: 10,
         userName: '춘식이',
         image_url: '',
         title: '안녕하세요',
@@ -92,7 +92,7 @@ const BOARD_LIST = [
         commentCount: 3,
         created_at: '2024-06-24T22:00:00',
     },{
-        id: 2,
+        id: 11,
         userName: '춘식이',
         image_url: '',
         title: '안녕하세요',
@@ -101,7 +101,7 @@ const BOARD_LIST = [
         commentCount: 3,
         created_at: '2024-06-24T22:00:00',
     },{
-        id: 3,
+        id: 12,
         userName: '춘식이',
         image_url: '',
         title: '안녕하세요',
@@ -110,7 +110,7 @@ const BOARD_LIST = [
         commentCount: 3,
         created_at: '2024-06-24T22:00:00',
     },{
-        id: 4,
+        id: 13,
         userName: '춘식이',
         image_url: '',
         title: '안녕하세요',
@@ -119,7 +119,7 @@ const BOARD_LIST = [
         commentCount: 3,
         created_at: '2024-06-24T22:00:00',
     },{
-        id: 5,
+        id: 14,
         userName: '춘식이',
         image_url: '',
         title: '안녕하세요',
@@ -128,7 +128,7 @@ const BOARD_LIST = [
         commentCount: 3,
         created_at: '2024-06-24T22:00:00',
     },{
-        id: 6,
+        id: 15,
         userName: '춘식이',
         image_url: '',
         title: '안녕하세요',
@@ -137,7 +137,7 @@ const BOARD_LIST = [
         commentCount: 3,
         created_at: '2024-06-24T22:00:00',
     },{
-        id: 7,
+        id: 16,
         userName: '춘식이',
         image_url: '',
         title: '안녕하세요',
@@ -146,7 +146,7 @@ const BOARD_LIST = [
         commentCount: 3,
         created_at: '2024-06-24T22:00:00',
     },{
-        id: 8,
+        id: 17,
         userName: '춘식이',
         image_url: '',
         title: '안녕하세요',
@@ -155,7 +155,7 @@ const BOARD_LIST = [
         commentCount: 3,
         created_at: '2024-06-24T22:00:00',
     },{
-        id: 9,
+        id: 18,
         userName: '춘식이',
         image_url: '',
         title: '안녕하세요',
@@ -178,8 +178,8 @@ export default function Board() {
                     <BoardCard
                         key={board.id}
                         idx={idx}
-                        total={BOARD_LIST.length}
                         id={board.id}
+                        total={BOARD_LIST.length}
                         name={board.userName}
                         image={board.image_url}
                         title={board.title}
