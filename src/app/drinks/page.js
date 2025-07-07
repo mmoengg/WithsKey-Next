@@ -1,19 +1,45 @@
 'use client';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import tags from "@/data/tagList";
 import DRINKS_LIST from "@/data/drinksList.js";
 import DrinkCard from "@/components/drinks/DrinkCard";
 
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 // import { supabase } from '@/utils/supabaseClient';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import Link from "next/link";
 
+// 화면 너비에 따라 한 줄에 표시할 아이템 수를 결정하는 함수
+function getItemsPerRow(width) {
+    if (width < 768) return 1;
+    if (width < 1024) return 2;
+    return 3;
+}
+
 export default function  Drinks() {
+    const [itemsPerRow, setItemsPerRow] = useState(0);
+
+    useEffect(() => {
+        setItemsPerRow(getItemsPerRow(window.innerWidth));
+        function handleResize() {
+            setItemsPerRow(getItemsPerRow(window.innerWidth));
+        }
+
+        window.addEventListener("resize", handleResize);
+        // 컴포넌트 언마운트 시 이벤트 제거
+        return () => window.removeEventListener("resize", handleResize);
+
+    }, []);
+
+    // 태그 출력 개수
+    const tagsToShow = itemsPerRow === 1 ? 3 : itemsPerRow === 2 ? 6 : 12;
+
+    ///// supabase로부터 태그 데이터 가져오기
     // const [tags, setTags] = useState([]);
     // const [error, setError] = useState(null);
     //
@@ -45,7 +71,7 @@ export default function  Drinks() {
                     <Swiper
                         modules={[Navigation]}
                         spaceBetween={0}
-                        slidesPerView={12}
+                        slidesPerView={tagsToShow}
                         slidesPerGroup={2}
                         speed={800}
                         style={{

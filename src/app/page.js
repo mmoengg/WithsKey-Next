@@ -9,7 +9,7 @@ export default function Home() {
         <div className='relative w-full min-h-screen fcc flex-col'>
             <HeroSection />
             <ServiceIntroSection />
-            <div className="w-full flex">
+            <div className="w-full flex flex-col lg:flex-row">
                 <BestItemsSection />
                 <RecentTagsSection />
             </div>
