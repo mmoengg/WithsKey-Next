@@ -22,7 +22,10 @@ function getItemsPerRow(width) {
 }
 
 export default function  Drinks() {
-    const [itemsPerRow, setItemsPerRow] = useState(0);
+    const [itemsPerRow, setItemsPerRow] = useState(() =>
+        typeof window !== "undefined" ? getItemsPerRow(window.innerWidth) : 3
+    );
+
 
     useEffect(() => {
         function handleResize() {
