@@ -15,12 +15,11 @@ export default function ArticleCategoryCard({ activeCategory, idx, id, label, su
 
     useEffect(() => {
         setItemsPerRow(getItemsPerRow(window.innerWidth));
-        function handwindowleResize() {
+        function handleResize() {
             setItemsPerRow(getItemsPerRow(window.innerWidth));
         }
-        handleResize();
-        window.addEventListener("resize", handleResize);
 
+        window.addEventListener("resize", handleResize);
         // 컴포넌트 언마운트 시 이벤트 제거
         return () => window.removeEventListener("resize", handleResize);
     }, []);

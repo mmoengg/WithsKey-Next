@@ -17,6 +17,7 @@ export default function DrinkCard({ idx, total, id, image, name, tags, level  })
         function handleResize() {
             setItemsPerRow(getItemsPerRow(window.innerWidth));
         }
+
         window.addEventListener("resize", handleResize);
         // 컴포넌트 언마운트 시 이벤트 제거
         return () => window.removeEventListener("resize", handleResize);

@@ -15,10 +15,11 @@ export default function BoardCard({ idx, total, id, name, image, title, content,
     const [itemsPerRow, setItemsPerRow] = useState(0);
 
     useEffect(() => {
+        setItemsPerRow(getItemsPerRow(window.innerWidth));
         function handleResize() {
             setItemsPerRow(getItemsPerRow(window.innerWidth));
         }
-        handleResize();
+
         window.addEventListener("resize", handleResize);
         // 컴포넌트 언마운트 시 이벤트 제거
         return () => window.removeEventListener("resize", handleResize);
@@ -29,16 +30,16 @@ export default function BoardCard({ idx, total, id, name, image, title, content,
     const isLastRow = idx >= lastRowStart;
 
     return (
-        <li className={`w-full md:w-1/3 lg:w-1/4 min-h-[calc((100dvh-55px)/4)] text-surface border-b-base border-r-base nth-child-4:border-0 
+        <li className={`w-full md:w-1/3 lg:w-1/4 h-[calc((100dvh-55px)/4)] min-h-[250px] text-surface border-b-base border-r-base nth-child-4:border-0 
                  ${isLastRow ? "last-row" : ""} `}>
             <Link
                 href={`/board/${id}`}
-                className={`h-full p-8 flex flex-col cursor-pointer`}
+                className={`h-full p-8 flex flex-col cursor-pointer gap-3`}
             >
                     {/*${idx < lastRowStart ? "border-b-base" : ''}*/}
                     {/*${isMultipleOfFive ? "" : 'border-r-base'} */}
                 <h3 className="text-2xl font-light font-eulyoo">방문했어요</h3>
-                <p className="flex-1">
+                <p className="flex-1 pb-3">
                     엔트리급 위스키 소개가 좋은 것 같아요
                 </p>
                 <div className="text-sm fcb">
