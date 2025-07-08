@@ -36,13 +36,11 @@ export default function DrinkCard({ idx, total, id, image, name, tags, level  })
         `}>
             <Link
                 href={`/drinks/${id}`}
-                className={`relative w-full min-h-[380px] px-6 py-12 fcx flex-col justify-between cursor-pointer 
-              
-                `}
+                className={`relative w-full min-h-[380px] px-6 py-12 fcx flex-col justify-between cursor-pointer`}
             >
                 {/* 이미지 */}
                 <Image
-                    src={image || "/assets/images/whisky-blended.jpg"}
+                    src={image || ""}
                     alt={name}
                     width={200}
                     height={200}

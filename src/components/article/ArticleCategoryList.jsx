@@ -27,11 +27,8 @@ export default function ArticleCategoryList() {
         setActiveCategory(category);
     }
     useEffect(() => {
-        handleCategoryClick(categoryFromQuery);
+        handleCategoryClick(categoryFromQuery || "tutorial");
     }, []);
-
-
-
 
     // 현재 카테고리의 리스트
     const currentList = ARTICLE_LISTS[activeCategory] || [];
