@@ -29,11 +29,13 @@ export default function Header() {
             </nav>
 
             <ul className='h-full flex'>
-                <li className="h-full px-4 border-l-base fcc flex sm:hidden">
-                    <button type="button" className='w-[34px] h-[34px] rounded-full border cursor-pointer' onClick={toggleMenu}>-</button>
+                <li className="w-[67px] h-full border-l-base fcc flex sm:hidden hover:bg-primary transition duration-200">
+                    <button type="button" className='w-full h-full cursor-pointer fcc' onClick={toggleMenu}>
+                        <img src='/assets/icons/icon-menu.svg' alt='Menu' className='w-12 h-auto' />
+                    </button>
                 </li>
-                <li className="h-full px-4 border-l-base fcc">
-                    <button type="button" className='w-[34px] h-[34px] rounded-full border'></button>
+                <li className="w-[67px] h-full px-4 border-l-base fcc">
+                    <button type="button" className='w-[34px] h-[34px] bg-black rounded-full border'></button>
                 </li>
             </ul>
 
@@ -48,7 +50,9 @@ export default function Header() {
                         <Link href='/board' className='p-6 fcc' onClick={toggleMenu}>
                             Other
                         </Link>
-                        <buton type="button" class="absolute bottom-1/4 w-[34px] h-[34px] rounded-full border fcc cursor-pointer" onClick={toggleMenu}>X</buton>
+                        <buton type="button" class="absolute bottom-1/4 w-[34px] h-[34px] rounded-full border hover:bg-background transition duration-200 cursor-pointer fcc" onClick={toggleMenu}>
+                            <img src='/assets/icons/icon-close.png' alt='Close menu' className='w-2.5 h-auto' />
+                        </buton>
                     </nav>
                 )
             }

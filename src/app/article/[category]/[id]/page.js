@@ -1,6 +1,7 @@
 'use client'
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useRouter, usePathname } from "next/navigation";
 
@@ -10,14 +11,11 @@ import BOURBON_ARTICLE_LIST from "@/data/bourbonArticles";
 import SINGLEMALT_ARTICLE_LIST from "@/data/singlemaltArticles";
 
 export default function ArticleDetailPage() {
-    const router = useRouter();
     const pathname = usePathname();
 
     // 경로에서 카테고리 추출 (예: /article/blended → blended)
     const category = pathname.split('/')[2] || 'tutorial';
     const pageId = Number(pathname.split('/')[3]) || '1';
-    console.log('category:', category);
-    console.log('pageId:', pageId, typeof pageId);
 
     // 카테고리별 데이터 매핑
     const CATEGORY_DATA = {
@@ -27,34 +25,48 @@ export default function ArticleDetailPage() {
         singlemalt: SINGLEMALT_ARTICLE_LIST,
     };
 
-
     // 현재 카테고리 데이터
     const articleList = CATEGORY_DATA[category] || [];
-    // console.log('articleList:', articleList);
 
     // 해당 탭
     const selectedArticle = articleList.find(tab => tab.id === pageId);
-    console.log('selectedArticle:', selectedArticle);
-
+    console.log('selectedArticle', selectedArticle);
 
     return (
         <section className="w-full h-auto min-h-base">
-            <div className="w-full h-[420px] border-b-base flex">
-                <div className="w-1/2 h-full p-4 flex flex-col justify-between">
-                    <Link href={'/article'} className="font-eulyoo underline">Go back to tutorial</Link>
-                    <h1 className="text-[65px] font-eulyoo font-light">{selectedArticle.label}</h1>
+            <div className="w-full h-[700px] md:h-[420px] flex flex-col md:flex-row">
+                <div className="w-full md:w-1/2 h-full p-4 flex flex-col justify-between border-b-base">
+                    <Link href={`/article?category=${selectedArticle.type}`} className="font-eulyoo underline">Go back to tutorial</Link>
+                    <h1 className="text-[65px] font-eulyoo font-light break-keep">{selectedArticle.label}</h1>
                 </div>
-                <div className="w-1/2 h-full p-4 border-l-base">
-                    <div className="w-full h-full bg-primary">
-                        {selectedArticle.image_url}
+                <div className="w-full md:w-1/2 h-full md:h-full p-4 md:border-l-[1px] border-b-base">
+                    <div className="w-full h-full relative bg-primary">
+                        {category === 'tutorial' && (
+                            <Image
+                                src={selectedArticle.main_image_url}
+                                alt={selectedArticle.label}
+                                fill
+                                sizes="100dvw"
+                                className="object-cover bg-white"
+                            />
+                        )}
+                        {category !== 'tutorial' && (
+                            <Image
+                                src={selectedArticle.main_image_url}
+                                alt={selectedArticle.label}
+                                fill
+                                sizes="100dvw"
+                                className="p-6 object-contain bg-white"
+                            />
+                        )}
                     </div>
                 </div>
             </div>
-            <div className="w-full min-h-[calc(100dvh-420px-55px)] flex">
-                <div className="w-1/2 p-4 "></div>
-                <ul className="w-1/2 p-4 border-l-base pt-[80px]">
+            <div className="w-full min-h-[calc(100dvh-420px-55px-280px)] md:min-h-[calc(100dvh-420px-55px)] flex">
+                <div className="w-1/2 p-4 hidden md:block"></div>
+                <ul className="w-1/2 p-4 md:border-l-[1px] pt-[80px]">
                     {selectedArticle.sections.map((section, idx) => (
-                        <li key={section.id} className="mb-20">
+                        <li key={idx} className="mb-20">
                             <h3 className="mb-6 text-3xl font-light font-eulyoo">{section.title}</h3>
                             <p className="font-light whitespace-pre-line">
                                 {section.content}

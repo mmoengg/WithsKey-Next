@@ -8,25 +8,31 @@ import SINGLEMALT_ARTICLE_LIST from "@/data/singlemaltArticles";
 import ArticleCategoryTabs from "./ArticleCategoryTabs";
 import ArticleCategoryCard from "./ArticleCategoryCard";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 const ARTICLE_LISTS = {
     tutorial: TUTORIAL_ARTICLE_LIST,
     blended: BLENDED_ARTICLE_LIST,
     bourbon: BOURBON_ARTICLE_LIST,
-    single: SINGLEMALT_ARTICLE_LIST,
+    singlemalt: SINGLEMALT_ARTICLE_LIST,
 };
 
 export default function ArticleCategoryList() {
     const [activeCategory, setActiveCategory] = useState("tutorial");
 
+    const searchParams = useSearchParams();
+    const categoryFromQuery = searchParams.get("category");
     const handleCategoryClick = (category) => {
-        console.log(category);
         setActiveCategory(category);
     }
+    useEffect(() => {
+        handleCategoryClick(categoryFromQuery || "tutorial");
+    }, []);
 
     // 현재 카테고리의 리스트
     const currentList = ARTICLE_LISTS[activeCategory] || [];
+    console.log('currentList', currentList);
 
     return (
         <section className="w-full h-auto min-h-[calc(100dvh-55px)]">

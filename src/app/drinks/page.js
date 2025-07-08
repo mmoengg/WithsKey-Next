@@ -23,6 +23,11 @@ function getItemsPerRow(width) {
 
 export default function  Drinks() {
     const [itemsPerRow, setItemsPerRow] = useState(0);
+    const [searchFlag, setSearchFlag] = useState(false);
+
+    const handleSearchToggle = () => {
+        setSearchFlag(searchFlag => !searchFlag);
+    }
 
     useEffect(() => {
         setItemsPerRow(getItemsPerRow(window.innerWidth));
@@ -63,48 +68,59 @@ export default function  Drinks() {
     return (
         <section className="w-full h-full min-h-screen flex flex-col">
             {/* 태그 리스트 */}
-            <div className="w-full h-[55px] border-b-base flex items-center justify-start pl-[67px]">
-                <div className="relative w-[calc(100%-(67px*2))] h-full">
-                    <button type="button" className="custom-prev absolute top-1/2 -left-[66px] -translate-y-1/2 w-[67px] h-full border-r-base z-10 hover:bg-primary transition duration-200 cursor-pointer">
-                        <span className="material-icons">{'<'}</span>
-                    </button>
-                    <Swiper
-                        modules={[Navigation]}
-                        spaceBetween={0}
-                        slidesPerView={tagsToShow}
-                        slidesPerGroup={2}
-                        speed={800}
-                        style={{
-                            "--swiper-navigation-color": "#1E0201",
-                        }}
-                        navigation={{
-                            nextEl: '.custom-next',
-                            prevEl: '.custom-prev'
-                        }}
-                        pagination={{ clickable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
-                        className="w-full h-full"
-                    >
-                        {tags.map((tag, idx) => (
-                            <SwiperSlide key={idx} className="cursor-pointer">
-                                <Link key={idx} href={`/tags/${tag.id}`} className="w-full h-full p-3 border-l-base text-sm text-surface font-eulyoo fcc text-center hover:bg-primary transition duration-200">
-                                    #{tag.name}
-                                </Link>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                    <button type="button" className="custom-next border-l-base absolute top-1/2 -right-[67px] -translate-y-1/2 w-[67px] h-full z-10 hover:bg-primary transition duration-200 cursor-pointer">
-                        <span className="material-icons">{'>'}</span>
-                    </button>
-                    <button type="button" className="border-l-base absolute top-1/2 -right-[134px] -translate-y-1/2 w-[67px] h-full z-10 hover:bg-primary transition duration-200 cursor-pointer">
-                        <span className="material-icons">{'O'}</span>
+            <div className={`w-full h-[55px] border-b-base flex items-center justify-start ${searchFlag ? 'pl-[16px]' : 'pl-[67px]'}`}>
+                {/*<div className="relative w-[calc(100%-(67px*2))] h-full">*/}
+                    <div className={`relative h-full ${searchFlag ? 'w-[calc(100%-(67px*1))]' : 'w-[calc(100%-(67px*2))]'}`}>
+
+                    {!searchFlag && (
+                        <>
+                            <button type="button" className="custom-prev absolute top-1/2 -left-[66px] -translate-y-1/2 w-[67px] h-full border-r-base z-10 hover:bg-primary transition duration-200 cursor-pointer">
+                                <span className="material-icons fcc">
+                                    <img src='/assets/icons/icon-arrow-right.png' alt='tag left page' className='w-6 h-auto rotate-180' />
+                                </span>
+                            </button>
+                            <Swiper
+                                modules={[Navigation]}
+                                spaceBetween={0}
+                                slidesPerView={tagsToShow}
+                                slidesPerGroup={2}
+                                speed={800}
+                                style={{
+                                    "--swiper-navigation-color": "#1E0201",
+                                }}
+                                navigation={{
+                                    nextEl: '.custom-next',
+                                    prevEl: '.custom-prev'
+                                }}
+                                pagination={{ clickable: true }}
+                                // onSwiper={(swiper) => console.log(swiper)}
+                                onSlideChange={() => console.log('slide change')}
+                                className="w-full h-full"
+                            >
+                                {tags.map((tag, idx) => (
+                                    <SwiperSlide key={idx} className="cursor-pointer">
+                                        <Link key={idx} href={`/tags/${tag.id}`} className="w-full h-full p-3 border-l-base text-sm text-surface font-eulyoo fcc text-center hover:bg-primary transition duration-200">
+                                            #{tag.name}
+                                        </Link>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                            <button type="button" className="custom-next border-l-base absolute top-1/2 -right-[67px] -translate-y-1/2 w-[67px] h-full z-10 hover:bg-primary transition duration-200 cursor-pointer">
+                                <span className="material-icons fcc">
+                                    <img src='/assets/icons/icon-arrow-right.png' alt='tag right page' className='w-6 h-auto' />
+                                </span>
+                            </button>
+                        </>
+                    )}
+                    {searchFlag && (
+                        <input placeholder="검색어를 입력해 주세요" className="w-full h-full border-none bg-transparent text-surface font-eulyoo text-sm pl-3 focus:outline-none" />
+                    )}
+                    <button type="button" className={`border-l-base absolute top-1/2 -translate-y-1/2 w-[67px] h-full z-10 hover:bg-primary transition duration-200 cursor-pointer ${searchFlag ? '-right-[67px]' : '-right-[134px]' }`} onClick={handleSearchToggle}>
+                        <span className="material-icons fcc">
+                            <img src='/assets/icons/icon-search.svg' alt='Search' className='w-7 h-auto' />
+                        </span>
                     </button>
                 </div>
-                {/*<div className="w-full h-full flex justify-between items-center gap-6 mb-8">*/}
-                {/*    <input placeholder="검색어를 입력해 주세요" />*/}
-                {/*    <button type="button" className="min-w-10 h-full rounded-md text-white bg-[#1E0201] px-[32px] py-[18px] text-nowrap cursor-pointer">검색</button>*/}
-                {/*</div>*/}
             </div>
 
             <h3 className="pl-3 pt-[150px] text-surface font-eulyoo text-4xl text-left mb-10 font-light tracking-tighter leading-12">
