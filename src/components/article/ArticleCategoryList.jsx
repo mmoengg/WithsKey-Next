@@ -8,6 +8,7 @@ import SINGLEMALT_ARTICLE_LIST from "@/data/singlemaltArticles";
 import ArticleCategoryTabs from "./ArticleCategoryTabs";
 import ArticleCategoryCard from "./ArticleCategoryCard";
 
+import { Suspense } from "react";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
@@ -36,22 +37,24 @@ export default function ArticleCategoryList() {
 
 
     return (
-        <section className="w-full h-auto min-h-[calc(100dvh-55px)]">
-            {/* 카테고리 */}
-            <ArticleCategoryTabs activeCategory={activeCategory} onCategoryClick={handleCategoryClick}/>
-            {/* 해당 콘텐츠 */}
-            <ul className="w-full h-full flex flex-wrap">
-                {currentList.map((item, idx) => (
-                    <ArticleCategoryCard
-                        key={item.id}
-                        idx={idx}
-                        subtitle={item.subtitle}
-                        activeCategory={activeCategory}
-                        total={currentList.length}
-                        {...item}
-                    />
-                ))}
-            </ul>
-        </section>
+        <Suspense fallback={<div>로딩 중...</div>}>
+            <section className="w-full h-auto min-h-[calc(100dvh-55px)]">
+                {/* 카테고리 */}
+                <ArticleCategoryTabs activeCategory={activeCategory} onCategoryClick={handleCategoryClick}/>
+                {/* 해당 콘텐츠 */}
+                <ul className="w-full h-full flex flex-wrap">
+                    {currentList.map((item, idx) => (
+                        <ArticleCategoryCard
+                            key={item.id}
+                            idx={idx}
+                            subtitle={item.subtitle}
+                            activeCategory={activeCategory}
+                            total={currentList.length}
+                            {...item}
+                        />
+                    ))}
+                </ul>
+            </section>
+        </Suspense>
     );
 }
