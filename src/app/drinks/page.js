@@ -66,7 +66,9 @@ export default function  Drinks() {
             <div className="w-full h-[55px] border-b-base flex items-center justify-start pl-[67px]">
                 <div className="relative w-[calc(100%-(67px*2))] h-full">
                     <button type="button" className="custom-prev absolute top-1/2 -left-[66px] -translate-y-1/2 w-[67px] h-full border-r-base z-10 hover:bg-primary transition duration-200 cursor-pointer">
-                        <span className="material-icons">{'<'}</span>
+                        <span className="material-icons fcc">
+                            <img src='/assets/icons/icon-arrow-right.png' alt='tag left page' className='w-6 h-auto rotate-180' />
+                        </span>
                     </button>
                     <Swiper
                         modules={[Navigation]}
@@ -95,10 +97,14 @@ export default function  Drinks() {
                         ))}
                     </Swiper>
                     <button type="button" className="custom-next border-l-base absolute top-1/2 -right-[67px] -translate-y-1/2 w-[67px] h-full z-10 hover:bg-primary transition duration-200 cursor-pointer">
-                        <span className="material-icons">{'>'}</span>
+                        <span className="material-icons fcc">
+                            <img src='/assets/icons/icon-arrow-right.png' alt='tag right page' className='w-6 h-auto' />
+                        </span>
                     </button>
                     <button type="button" className="border-l-base absolute top-1/2 -right-[134px] -translate-y-1/2 w-[67px] h-full z-10 hover:bg-primary transition duration-200 cursor-pointer">
-                        <span className="material-icons">{'O'}</span>
+                        <span className="material-icons fcc">
+                            <img src='/assets/icons/icon-search.svg' alt='Search' className='w-7 h-auto' />
+                        </span>
                     </button>
                 </div>
                 {/*<div className="w-full h-full flex justify-between items-center gap-6 mb-8">*/}

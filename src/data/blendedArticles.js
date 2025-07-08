@@ -3,10 +3,10 @@ const BLENDED_ARTICLE_LIST = [
         id: 1,
         label: '페이머스 그라우스',
         type: 'blended',
+        main_image_url: '/assets/images/article/blended/famousgrouse.jpg',
         sections: [
             {
                 title: '1. 페이머스 그라우스',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/blended/%EB%B8%94%EB%A0%8C%EB%94%94%EB%93%9C-%ED%8E%98%EC%9D%B4%EB%A8%B8%EC%8A%A4%EA%B7%B8%EB%A1%9C%EC%9A%B0%EC%A6%88.JPG',
             },
             {
                 title: '제품 정보',
@@ -38,10 +38,10 @@ const BLENDED_ARTICLE_LIST = [
         id: 2,
         label: '몽키숄더',
         type: 'blended',
+        main_image_url: '/assets/images/article/blended/monkeyshoulder.png',
         sections: [
             {
                 title: '2. 몽키 숄더',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/blended/%EB%B8%94%EB%A0%8C%EB%94%94%EB%93%9C-%EB%AA%BD%ED%82%A4%EC%88%84%EB%8D%94.JPG',
             },
             {
                 title: '제품 정보',
@@ -69,10 +69,10 @@ const BLENDED_ARTICLE_LIST = [
         id: 3,
         label: '블랙보틀',
         type: 'blended',
+        main_image_url: '/assets/images/article/blended/blackbottle.png',
         sections: [
             {
                 title: '3. 블랙 보틀',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/blended/%EB%B8%94%EB%A0%8C%EB%94%94%EB%93%9C-%EB%B8%94%EB%9E%99%EB%B3%B4%ED%8B%80.JPG',
             },
             {
                 title: '제품 정보',
@@ -97,10 +97,10 @@ const BLENDED_ARTICLE_LIST = [
         id: 4,
         label: '조니워커 그린',
         type: 'blended',
+        main_image_url: '/assets/images/article/blended/greenlabel.jpg',
         sections: [
             {
                 title: '4. 조니워커 그린',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/blended/%EB%B8%94%EB%A0%8C%EB%94%94%EB%93%9C-%EC%A1%B0%EB%8B%88%EC%9B%8C%EC%BB%A4%EA%B7%B8%EB%A6%B0.JPG',
             },
             {
                 title: '제품 정보',
@@ -124,10 +124,10 @@ const BLENDED_ARTICLE_LIST = [
         id: 5,
         label: '발렌타인 12',
         type: 'blended',
+        main_image_url: '/assets/images/article/blended/ballantine.jpg',
         sections: [
             {
                 title: '5. 발렌타인 12',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/blended/%EB%B8%94%EB%A0%8C%EB%94%94%EB%93%9C-%EB%B0%9C%EB%A0%8C%ED%83%80%EC%9D%B812.JPG',
             },
             {
                 title: '제품 정보',

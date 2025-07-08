@@ -4,7 +4,7 @@ export default function ServiceIntroSection() {
     return (
         <div className='w-full min-h-[50dvh] px-4 py-28 border-b-base fcc'>
             <div className="w-full h-full text-center fcc flex-col ">
-                <h2 className="mb-4 text-6xl font-bold font-eulyoo">Your Whisky Guide</h2>
+                <h2 className="mb-4 text-4xl md:text-6xl font-bold font-eulyoo">Your Whisky Guide</h2>
                 <p className="text-lg mb-10">위스키 입문자를 위한 다양한 기능을 경험해보세요.</p>
                 <ul className="w-full flex items-center justify-center gap-4 lg:gap-8 flex-col lg:flex-row">
                     <li className="w-full lg:w-[340px] min-h-[330px] px-6 py-12 border border-surface flex flex-col items-center justify-center">

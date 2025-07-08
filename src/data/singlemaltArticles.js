@@ -3,10 +3,10 @@ const SINGLEMALT_ARTICLE_LIST = [
         id: 1,
         label: '글렌모렌지 오리지널',
         type: 'single',
+        main_image_url: '/assets/images/article/singlemoalt/glenmorangieoriginal.png',
         sections: [
             {
                 title: '1. 글렌모렌지 오리지널',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/single/%EC%8B%B1%EA%B8%80-%EA%B8%80%EB%A0%8C%EB%AA%A8%EB%A0%8C%EC%A7%8012.JPG'
             },
             {
                 title: '제품 정보',
@@ -29,10 +29,10 @@ const SINGLEMALT_ARTICLE_LIST = [
         id: 2,
         label: '글렌피딕 12',
         type: 'single',
+        main_image_url: '/assets/images/article/singlemoalt/glenfiddich12.jpg',
         sections: [
             {
                 title: '2. 글렌피딕 12',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/single/%EC%8B%B1%EA%B8%80-%EA%B8%80%EB%A0%8C%ED%94%BC%EB%94%9512.JPG'
             },
             {
                 title: '제품 정보',
@@ -54,10 +54,10 @@ const SINGLEMALT_ARTICLE_LIST = [
         id: 3,
         label: '글렌리벳 12',
         type: 'single',
+        main_image_url: '/assets/images/article/singlemoalt/glenlivet12.jpg',
         sections: [
             {
                 title: '3. 글렌리벳 12',
-                content: '이미지 링크'
             },
             {
                 title: '제품 정보',
@@ -80,10 +80,10 @@ const SINGLEMALT_ARTICLE_LIST = [
         id: 4,
         label: '맥켈란 12 더블 캐스크',
         type: 'single',
+        main_image_url: '/assets/images/article/singlemoalt/macallan.jpg',
         sections: [
             {
                 title: '4. 맥켈란 12 더블 캐스크',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/single/%EC%8B%B1%EA%B8%80-%EB%A7%A5%EC%BC%88%EB%9E%8012.png'
             },
             {
                 title: '제품 정보',
@@ -107,10 +107,10 @@ const SINGLEMALT_ARTICLE_LIST = [
         id: 5,
         label: '발베니 12 더블우드',
         type: 'single',
+        main_image_url: '/assets/images/article/singlemoalt/balvenie12.jpg',
         sections: [
             {
                 title: '5. 발베니 12 더블우드',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/single/%EC%8B%B1%EA%B8%80-%EB%B0%9C%EB%B2%A0%EB%8B%8812.png'
             },
             {
                 title: '제품 정보',

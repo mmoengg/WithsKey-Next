@@ -1,6 +1,7 @@
 'use client'
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useRouter, usePathname } from "next/navigation";
 
@@ -16,8 +17,6 @@ export default function ArticleDetailPage() {
     // 경로에서 카테고리 추출 (예: /article/blended → blended)
     const category = pathname.split('/')[2] || 'tutorial';
     const pageId = Number(pathname.split('/')[3]) || '1';
-    console.log('category:', category);
-    console.log('pageId:', pageId, typeof pageId);
 
     // 카테고리별 데이터 매핑
     const CATEGORY_DATA = {
@@ -27,15 +26,11 @@ export default function ArticleDetailPage() {
         singlemalt: SINGLEMALT_ARTICLE_LIST,
     };
 
-
     // 현재 카테고리 데이터
     const articleList = CATEGORY_DATA[category] || [];
-    // console.log('articleList:', articleList);
 
     // 해당 탭
     const selectedArticle = articleList.find(tab => tab.id === pageId);
-    console.log('selectedArticle:', selectedArticle);
-
 
     return (
         <section className="w-full h-auto min-h-base">
@@ -45,8 +40,25 @@ export default function ArticleDetailPage() {
                     <h1 className="text-[65px] font-eulyoo font-light">{selectedArticle.label}</h1>
                 </div>
                 <div className="w-1/2 h-full p-4 border-l-base">
-                    <div className="w-full h-full bg-primary">
-                        {selectedArticle.image_url}
+                    <div className="w-full h-full relative bg-primary">
+                        {category === 'tutorial' && (
+                            <Image
+                                src={selectedArticle.main_image_url}
+                                alt={selectedArticle.label}
+                                fill
+                                sizes="100dvw"
+                                className="object-cover bg-white"
+                            />
+                        )}
+                        {category !== 'tutorial' && (
+                            <Image
+                                src={selectedArticle.main_image_url}
+                                alt={selectedArticle.label}
+                                fill
+                                sizes="100dvw"
+                                className="p-6 object-contain bg-white"
+                            />
+                        )}
                     </div>
                 </div>
             </div>
@@ -54,7 +66,7 @@ export default function ArticleDetailPage() {
                 <div className="w-1/2 p-4 "></div>
                 <ul className="w-1/2 p-4 border-l-base pt-[80px]">
                     {selectedArticle.sections.map((section, idx) => (
-                        <li key={section.id} className="mb-20">
+                        <li key={idx} className="mb-20">
                             <h3 className="mb-6 text-3xl font-light font-eulyoo">{section.title}</h3>
                             <p className="font-light whitespace-pre-line">
                                 {section.content}

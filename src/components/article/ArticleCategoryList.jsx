@@ -21,7 +21,6 @@ export default function ArticleCategoryList() {
     const [activeCategory, setActiveCategory] = useState("tutorial");
 
     const handleCategoryClick = (category) => {
-        console.log(category);
         setActiveCategory(category);
     }
 

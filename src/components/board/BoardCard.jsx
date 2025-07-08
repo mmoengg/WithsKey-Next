@@ -38,13 +38,16 @@ export default function BoardCard({ idx, total, id, name, image, title, content,
             >
                     {/*${idx < lastRowStart ? "border-b-base" : ''}*/}
                     {/*${isMultipleOfFive ? "" : 'border-r-base'} */}
-                <h3 className="text-2xl font-light font-eulyoo">방문했어요</h3>
+                <h3 className="text-2xl font-light font-eulyoo">{title}</h3>
                 <p className="flex-1 pb-3">
-                    엔트리급 위스키 소개가 좋은 것 같아요
+                    {content}
                 </p>
                 <div className="text-sm fcb">
                     <span>by {name}</span>
-                    <span>{comment}</span>
+                    <div>
+                        <span>{like}</span>
+                        <span>{comment}</span>
+                    </div>
                 </div>
             </Link>
         </li>

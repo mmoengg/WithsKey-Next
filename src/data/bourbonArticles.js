@@ -3,10 +3,10 @@ const BOURBON_ARTICLE_LIST = [
         id: 1,
         label: '와일드 터키101',
         type: 'bourbon',
+        main_image_url: '/assets/images/article/bourbon/wildturkey.jpg',
         sections: [
             {
                 title: '1. 와일드 터키 101',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/bourbon/%EB%B2%84%EB%B2%88-%EC%99%80%EC%9D%B4%EB%93%A4%ED%84%B0%ED%82%A4.JPG',
             },
             {
                 title: '제품 정보',
@@ -32,10 +32,10 @@ const BOURBON_ARTICLE_LIST = [
         id: 2,
         label: '메이커스 마크',
         type: 'bourbon',
+        main_image_url: '/assets/images/article/bourbon/makersmark.jpg',
         sections: [
             {
                 title: '2. 메이커스 마크',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/bourbon/%EB%B2%84%EB%B2%88-%EB%A9%94%EC%9D%B4%EC%BB%A4%EC%8A%A4%EB%A7%88%ED%81%AC.JPG',
             },
             {
                 title: '제품 정보',
@@ -61,10 +61,10 @@ const BOURBON_ARTICLE_LIST = [
         id: 3,
         label: '버팔로 트레이스',
         type: 'bourbon',
+        main_image_url: '/assets/images/article/bourbon/buffalotrace.jpg',
         sections: [
             {
                 title: '3. 버팔로 트레이스',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/bourbon/%EB%B2%84%EB%B2%88-%EB%B2%84%ED%8C%94%EB%A1%9C%ED%8A%B8%EB%A0%88%EC%9D%B4%EC%8A%A4.JPG',
             },
             {
                 title: '제품 정보',
@@ -89,10 +89,10 @@ const BOURBON_ARTICLE_LIST = [
         id: 4,
         label: '짐빔',
         type: 'bourbon',
+        main_image_url: '/assets/images/article/bourbon/jimbeam.jpg',
         sections: [
             {
                 title: '4. 짐빔',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/bourbon/%EB%B2%84%EB%B2%88-%EC%A7%90%EB%B9%94.JPG',
             },
             {
                 title: '제품 정보',
@@ -117,10 +117,10 @@ const BOURBON_ARTICLE_LIST = [
         id: 5,
         label: '불렛',
         type: 'bourbon',
+        main_image_url: '/assets/images/article/bourbon/bulleitbourbon.jpg',
         sections: [
             {
                 title: '5. 불렛',
-                content: 'https://main-001-image.s3.ap-northeast-2.amazonaws.com/bourbon/%EB%B2%84%EB%B2%88-%EB%B6%88%EB%A0%9B.JPG',
             },
             {
                 title: '제품 정보',
