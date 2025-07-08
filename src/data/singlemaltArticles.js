@@ -2,7 +2,7 @@ const SINGLEMALT_ARTICLE_LIST = [
     {
         id: 1,
         label: '글렌모렌지 오리지널',
-        type: 'single',
+        type: 'singlemalt',
         main_image_url: '/assets/images/article/singlemoalt/glenmorangieoriginal.png',
         sections: [
             {
@@ -28,7 +28,7 @@ const SINGLEMALT_ARTICLE_LIST = [
     {
         id: 2,
         label: '글렌피딕 12',
-        type: 'single',
+        type: 'singlemalt',
         main_image_url: '/assets/images/article/singlemoalt/glenfiddich12.jpg',
         sections: [
             {
@@ -53,7 +53,7 @@ const SINGLEMALT_ARTICLE_LIST = [
     {
         id: 3,
         label: '글렌리벳 12',
-        type: 'single',
+        type: 'singlemalt',
         main_image_url: '/assets/images/article/singlemoalt/glenlivet12.jpg',
         sections: [
             {
@@ -79,7 +79,7 @@ const SINGLEMALT_ARTICLE_LIST = [
     {
         id: 4,
         label: '맥켈란 12 더블 캐스크',
-        type: 'single',
+        type: 'singlemalt',
         main_image_url: '/assets/images/article/singlemoalt/macallan.jpg',
         sections: [
             {
@@ -106,7 +106,7 @@ const SINGLEMALT_ARTICLE_LIST = [
     {
         id: 5,
         label: '발베니 12 더블우드',
-        type: 'single',
+        type: 'singlemalt',
         main_image_url: '/assets/images/article/singlemoalt/balvenie12.jpg',
         sections: [
             {

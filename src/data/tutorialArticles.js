@@ -1,6 +1,7 @@
 const TUTORIAL_ARTICLE_LIST = [
     {
         id: 1,
+        type: 'tutorial',
         label: '위스키를 아시나요?',
         subtitle: '위스키를 알기 위한 여정에 오신 것을 환영합니다.',
         main_image_url: '/assets/images/article/tutorial/1751947129422.png',
@@ -98,6 +99,7 @@ const TUTORIAL_ARTICLE_LIST = [
     },
     {
         id: 2,
+        type: 'tutorial',
         label: '위스키의 탄생',
         subtitle: '위스키의 시작은 스코틀랜드에서부터',
         main_image_url: '/assets/images/article/tutorial/1751947148104.png',
@@ -162,6 +164,7 @@ const TUTORIAL_ARTICLE_LIST = [
     },
     {
         id: 3,
+        type: 'tutorial',
         label: '위스키 제조 과정 -상-',
         subtitle: '위스키를 만드는 큰 그림부터',
         main_image_url: '/assets/images/article/tutorial/1751947938494.png',
@@ -297,6 +300,7 @@ const TUTORIAL_ARTICLE_LIST = [
     },
     {
         id: 4,
+        type: 'tutorial',
         label: '위스키 제조 과정 -하-',
         subtitle: '위스키를 만드는 큰 그림부터',
         main_image_url: '/assets/images/article/tutorial/1751947180849.png',
@@ -425,6 +429,7 @@ const TUTORIAL_ARTICLE_LIST = [
     },
     {
         id: 5,
+        type: 'tutorial',
         label: '위스키 시음 -상-',
         subtitle: '위스키를 즐기는 방법',
         main_image_url: '/assets/images/article/tutorial/1751947218589.png',
@@ -482,6 +487,7 @@ const TUTORIAL_ARTICLE_LIST = [
     },
     {
         id: 6,
+        type: 'tutorial',
         label: '위스키 시음 -하-',
         subtitle: '위스키를 즐기는 방법',
         main_image_url: '/assets/images/article/tutorial/1751947228684.png',
@@ -570,6 +576,7 @@ const TUTORIAL_ARTICLE_LIST = [
     },
     {
         id: 7,
+        type: 'tutorial',
         label: '위스키 종류 알아보기',
         subtitle: '위스키는 정말 종류가 많아요!',
         main_image_url: '/assets/images/article/tutorial/1751947237171.png',
@@ -680,6 +687,7 @@ const TUTORIAL_ARTICLE_LIST = [
     },
     {
         id: 8,
+        type: 'tutorial',
         label: '이야깃거리',
         subtitle: '위스키에 얽힌 재미있는 이야기들',
         main_image_url: '/assets/images/article/tutorial/1751947250200.png',
@@ -743,6 +751,7 @@ const TUTORIAL_ARTICLE_LIST = [
     },
     {
         id: 9,
+        type: 'tutorial',
         label: '위스키 용어 사전',
         subtitle: '위스키를 즐기기 위한 필수 지식',
         main_image_url: '/assets/images/article/tutorial/1751948422081.png',

@@ -2,7 +2,7 @@ const CATEGORIES = [
     { key: 'tutorial', label: 'Tutorial' },
     { key: 'blended', label: 'Blended' },
     { key: 'bourbon', label: 'Bourbon' },
-    { key: 'single', label: 'Single Malt' },
+    { key: 'singlemalt', label: 'Single Malt' },
 ];
 
 export default function ArticleCategoryTabs({ activeCategory, onCategoryClick }) {

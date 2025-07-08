@@ -12,7 +12,7 @@ function getItemsPerRow(width) {
     return 3;
 }
 
-export default function ArticleCategoryCard({ activeCategory, idx, id, label, subtitle, main_image_url, total}) {
+export default function ArticleCategoryCard({ activeCategory, idx, id, label, subtitle, main_image_url, total }) {
     const [itemsPerRow, setItemsPerRow] = useState(0);
 
     useEffect(() => {

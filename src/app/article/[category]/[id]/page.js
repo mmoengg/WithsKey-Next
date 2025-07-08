@@ -11,7 +11,6 @@ import BOURBON_ARTICLE_LIST from "@/data/bourbonArticles";
 import SINGLEMALT_ARTICLE_LIST from "@/data/singlemaltArticles";
 
 export default function ArticleDetailPage() {
-    const router = useRouter();
     const pathname = usePathname();
 
     // 경로에서 카테고리 추출 (예: /article/blended → blended)
@@ -31,15 +30,16 @@ export default function ArticleDetailPage() {
 
     // 해당 탭
     const selectedArticle = articleList.find(tab => tab.id === pageId);
+    console.log('selectedArticle', selectedArticle);
 
     return (
         <section className="w-full h-auto min-h-base">
-            <div className="w-full h-[420px] border-b-base flex">
-                <div className="w-1/2 h-full p-4 flex flex-col justify-between">
-                    <Link href={'/article'} className="font-eulyoo underline">Go back to tutorial</Link>
-                    <h1 className="text-[65px] font-eulyoo font-light">{selectedArticle.label}</h1>
+            <div className="w-full h-[700px] md:h-[420px] flex flex-col md:flex-row">
+                <div className="w-full md:w-1/2 h-full p-4 flex flex-col justify-between border-b-base">
+                    <Link href={`/article?category=${selectedArticle.type}`} className="font-eulyoo underline">Go back to tutorial</Link>
+                    <h1 className="text-[65px] font-eulyoo font-light break-keep">{selectedArticle.label}</h1>
                 </div>
-                <div className="w-1/2 h-full p-4 border-l-base">
+                <div className="w-full md:w-1/2 h-full md:h-full p-4 md:border-l-[1px] border-b-base">
                     <div className="w-full h-full relative bg-primary">
                         {category === 'tutorial' && (
                             <Image
@@ -62,9 +62,9 @@ export default function ArticleDetailPage() {
                     </div>
                 </div>
             </div>
-            <div className="w-full min-h-[calc(100dvh-420px-55px)] flex">
-                <div className="w-1/2 p-4 "></div>
-                <ul className="w-1/2 p-4 border-l-base pt-[80px]">
+            <div className="w-full min-h-[calc(100dvh-420px-55px-280px)] md:min-h-[calc(100dvh-420px-55px)] flex">
+                <div className="w-1/2 p-4 hidden md:block"></div>
+                <ul className="w-1/2 p-4 md:border-l-[1px] pt-[80px]">
                     {selectedArticle.sections.map((section, idx) => (
                         <li key={idx} className="mb-20">
                             <h3 className="mb-6 text-3xl font-light font-eulyoo">{section.title}</h3>
