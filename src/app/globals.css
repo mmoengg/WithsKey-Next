@@ -66,6 +66,10 @@
 }
 
 @layer base {
+    * {
+        scrollbar-width: none; /* 스크롤바 완전히 숨김 */
+        -ms-overflow-style: none; /* IE, Edge 구버전용 */
+    }
     *::-webkit-scrollbar {
         display: none;
     }
