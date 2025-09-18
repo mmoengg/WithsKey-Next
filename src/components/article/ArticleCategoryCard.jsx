@@ -34,7 +34,7 @@ export default function ArticleCategoryCard({ activeCategory, idx, id, label, su
         <li className={`min-w-full md:min-w-1/2 lg:min-w-1/3 min-h-[calc(50dvh-55px)] p-4 flex flex-col border-b-base border-r-base nth-child-3:border-0 ${isLastRow ? "last-row" : ""}`}>
             <div className="w-full h-full flex justify-between flex-col gap-12">
 
-                <div className="w-full h-auto relative flex-1">
+                <div className="w-full min-h-[250px] relative flex-1">
                     {activeCategory === "tutorial" && (
                         <Image
                             src={main_image_url}
